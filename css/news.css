@@ -74,7 +74,7 @@ body.news-body::before{
   padding:.4rem clamp(.5rem, 2vw, 1.6rem) .6rem;
 }
 #book{
-  width:min(1120px, 96vw);
+  width:min(1120px, 100%);
   position:relative; z-index:4;
 }
 .book-shadow{

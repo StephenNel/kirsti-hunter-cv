@@ -184,6 +184,8 @@ body.desk-body::before{
 }
 .pp-org{
   font-family:'Special Elite', monospace; font-size:.58rem; letter-spacing:.12em;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;
+  margin-left:.5rem;
 }
 .pp-body{
   display:flex; gap:.9rem; padding:.95rem .9rem .5rem;

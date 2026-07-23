@@ -181,7 +181,6 @@
   frag.append(buildBack());
   book.append(frag);
 
-  const isNarrow = window.matchMedia('(max-width: 720px)').matches;
   const startPage = Math.max(0, parseInt(new URLSearchParams(location.search).get('page'), 10) - 1 || 0);
 
   const pageFlip = new St.PageFlip(book, {
@@ -189,15 +188,15 @@
     width: 550,
     height: 730,
     size: 'stretch',
-    minWidth: 280,
+    minWidth: 230,
     maxWidth: 620,
-    minHeight: 372,
+    minHeight: 305,
     maxHeight: 823,
     maxShadowOpacity: 0.55,
     showCover: true,
     drawShadow: true,
     flippingTime: 900,
-    usePortrait: isNarrow,
+    usePortrait: true,
     autoSize: true,
     mobileScrollSupport: false,
     showPageCorners: true,
