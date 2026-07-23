@@ -355,6 +355,15 @@ body.desk-body::before{
 }
 .folded-paper:hover .sticky-note{ transform:rotate(2deg) scale(1.05); transition:transform .3s; }
 
+a.sticky-note{ text-decoration:none; }
+.sticky-cv{
+  right:auto; left:-34px; top:-34px;
+  transform:rotate(-5deg);
+  background:linear-gradient(160deg, #f8d16f, #eeb94f);
+  transition:transform .3s;
+}
+.sticky-cv:hover{ transform:rotate(-1deg) scale(1.06); }
+
 /* ---------- clippings ---------- */
 
 .clipping{
