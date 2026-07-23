@@ -15,7 +15,6 @@
   /* ---------- front page (hard cover) ---------- */
   function buildCover() {
     const page = el('div', 'page page--cover');
-    page.dataset.density = 'hard';
     const inner = el('div', 'page-inner cover-inner');
 
     // ears + masthead
@@ -157,7 +156,6 @@
   /* ---------- back page (hard cover) ---------- */
   function buildBack() {
     const page = el('div', 'page page--back');
-    page.dataset.density = 'hard';
     const inner = el('div', 'page-inner back-inner');
 
     inner.append(el('h2', 'back-mast', PAPER_NAME));
