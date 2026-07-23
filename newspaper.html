@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hunter Herald — Articles by Kirsti Hunter</title>
+<meta name="description" content="Page through The Hunter Herald — the collected articles of journalist Kirsti Hunter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/news.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%97%9E%EF%B8%8F%3C/text%3E%3C/svg%3E">
+</head>
+<body class="news-body">
+
+<div class="vignette" aria-hidden="true"></div>
+
+<nav class="news-nav">
+  <a class="back-link" href="index.html">← Back to the desk</a>
+  <div class="nav-title">The Hunter Herald</div>
+  <div class="nav-hint">Drag a page corner — or use the arrows</div>
+</nav>
+
+<main class="stage">
+  <div class="book-shadow" aria-hidden="true"></div>
+  <div id="book"></div>
+</main>
+
+<div class="controls">
+  <button id="prevBtn" class="ctl-btn" aria-label="Previous page">‹</button>
+  <span id="pageIndicator" class="page-indicator">—</span>
+  <button id="nextBtn" class="ctl-btn" aria-label="Next page">›</button>
+</div>
+
+<script src="vendor/page-flip.browser.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/newspaper.js"></script>
+</body>
+</html>
