@@ -204,7 +204,9 @@
   frag.append(buildBack());
   book.append(frag);
 
-  const startPage = Math.max(0, parseInt(new URLSearchParams(location.search).get('page'), 10) - 1 || 0);
+  const params = new URLSearchParams(location.search);
+  const startPage = Math.max(0, parseInt(params.get('page'), 10) - 1 || 0);
+  const flipMs = parseInt(params.get('fliptime'), 10) || 900;
 
   const pageFlip = new St.PageFlip(book, {
     startPage: startPage,
@@ -218,7 +220,7 @@
     maxShadowOpacity: 0.55,
     showCover: true,
     drawShadow: true,
-    flippingTime: 900,
+    flippingTime: flipMs,
     usePortrait: true,
     autoSize: true,
     mobileScrollSupport: false,
@@ -227,6 +229,7 @@
   });
 
   pageFlip.loadFromHTML(document.querySelectorAll('#book .page'));
+  window.__pf = pageFlip;
 
   /* ---------- controls ---------- */
   const indicator = document.getElementById('pageIndicator');
