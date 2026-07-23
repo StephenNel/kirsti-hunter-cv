@@ -105,6 +105,8 @@
     inner.append(byline);
 
     const body = el('div', 'article-body');
+    const wordCount = a.body.join(' ').split(/\s+/).length;
+    if (wordCount > 360) body.classList.add('article-body--dense');
     a.body.forEach((para, pi) => {
       if (pi === 0) {
         const p = el('p', 'para para-first');

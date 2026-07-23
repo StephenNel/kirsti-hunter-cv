@@ -207,6 +207,11 @@ body.news-body::before{
   -webkit-mask-image:linear-gradient(180deg, #000 92%, transparent 100%);
           mask-image:linear-gradient(180deg, #000 92%, transparent 100%);
 }
+.article-body--dense{
+  font-size:1.6cqw;
+  line-height:1.44;
+}
+.article-body--dense .pullquote p{ font-size:2.1cqw; }
 .para{ margin-bottom:1.5cqw; }
 .para-first .dateline-lead{
   font-weight:700; letter-spacing:.06em;
