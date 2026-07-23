@@ -49,7 +49,7 @@
     const story = el('div', 'cover-story');
     [
       'POTCHEFSTROOM — Third-year Bachelor of Arts in Communication student at North-West University, Kirsti Hunter is passionate about journalism and is seeking hands-on experience in writing, reporting and media production.',
-      'Her training ground has been the Dinki day-residence newsletter, where she has written since 2024, and the newsroom of the Mossel Bay Advertiser, where she job-shadowed through the summer of 2025–26 and returns in June.',
+      'Her training ground has been the Dinki day-residence newsletter, where she has written since 2024, and the newsroom of the Mossel Bay Advertiser — where her bylined reporting, from community marches to conservation drives, has been published since November 2025.',
       'Skilled in research, communication and digital tools — from Adobe InDesign to the notebook in her back pocket — she brings a strong academic foundation in mass media and a warm, unhurried eye for the stories people actually live.',
     ].forEach((t, i) => {
       const p = el('p', i === 0 ? 'lede' : '', t);
@@ -107,6 +107,7 @@
     const body = el('div', 'article-body');
     const wordCount = a.body.join(' ').split(/\s+/).length;
     if (wordCount > 360) body.classList.add('article-body--dense');
+    if (wordCount < 240) body.classList.add('article-body--airy');
     a.body.forEach((para, pi) => {
       if (pi === 0) {
         const p = el('p', 'para para-first');
@@ -127,6 +128,28 @@
     if (last) last.append(el('span', 'endmark', ' ■'));
     inner.append(body);
 
+    // vintage filler notice fills out shorter news pages
+    if (wordCount < 240) {
+      const filler = el('div', 'filler-ad');
+      filler.append(el('p', 'fa-head', 'SITUATIONS WANTED'));
+      filler.append(el('p', 'fa-body',
+        'Young journalist — keen eye, steady pen, deadline-proof — seeks newsroom. ' +
+        'Research, InDesign & two languages offered. Apply within: kirstihunter15@gmail.com'));
+      inner.append(filler);
+    }
+
+    // provenance line for published work
+    if (a.url) {
+      const src = el('p', 'source-line');
+      src.append(document.createTextNode('First published in the Mossel Bay Advertiser · '));
+      const link = el('a', '', 'read online →');
+      link.href = a.url;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      src.append(link);
+      inner.append(src);
+    }
+
     page.append(inner);
     return page;
   }
@@ -142,7 +165,7 @@
 
     const col = el('div', 'colophon');
     [
-      'This edition collects the writing and portfolio work of Kirsti Hunter: student journalist at North-West University, writer for the Dinki day-residence newsletter, and job-shadow alumna of the Mossel Bay Advertiser.',
+      'This edition collects the writing of Kirsti Hunter — student journalist at North-West University, writer for the Dinki day-residence newsletter, and contributor to the Mossel Bay Advertiser, where the news reports and columns in these pages first appeared.',
       'Set in Playfair Display and Old Standard on warm newsprint. Edited, laid out and worried over by the author herself.',
     ].forEach(t => col.append(el('p', '', t)));
     inner.append(col);

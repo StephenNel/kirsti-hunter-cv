@@ -211,6 +211,46 @@ body.news-body::before{
   font-size:1.6cqw;
   line-height:1.44;
 }
+.article-body--airy{
+  font-size:2.05cqw;
+  line-height:1.62;
+}
+.article-body--airy .pullquote p{ font-size:2.55cqw; }
+
+.filler-ad{
+  flex:none;
+  margin-top:2cqw;
+  border:.42cqw double var(--ink);
+  padding:1.6cqw 2.4cqw 1.8cqw;
+  text-align:center;
+  background:rgba(255,250,235,.35);
+}
+.fa-head{
+  font-family:'Old Standard TT', serif; font-weight:700;
+  font-size:1.5cqw; letter-spacing:.4em; color:var(--ink);
+  border-bottom:.16cqw solid var(--ink);
+  display:inline-block; padding:0 1cqw .5cqw; margin-bottom:.9cqw;
+}
+.fa-body{
+  font-family:'Old Standard TT', serif; font-style:italic;
+  font-size:1.7cqw; line-height:1.6; color:var(--ink-soft);
+}
+
+.source-line{
+  flex:none;
+  margin-top:1.6cqw;
+  padding-top:1cqw;
+  border-top:.16cqw solid rgba(43,33,24,.4);
+  font-family:'Old Standard TT', serif;
+  font-size:1.35cqw; letter-spacing:.06em;
+  color:var(--ink-faint);
+  text-align:right;
+}
+.source-line a{
+  color:var(--red); text-decoration:none;
+  border-bottom:1px dotted rgba(140,47,34,.6);
+}
+.source-line a:hover{ border-bottom-style:solid; }
 .article-body--dense .pullquote p{ font-size:2.1cqw; }
 .para{ margin-bottom:1.5cqw; }
 .para-first .dateline-lead{

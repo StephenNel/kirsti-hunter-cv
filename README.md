@@ -22,9 +22,9 @@ All newspaper content lives in **`js/articles.js`** — one object per article:
 }
 ```
 
-Replace the placeholder articles with real ones — pages, the front-page index and page numbers regenerate automatically. Keep bodies roughly 280–420 words so they fit a page. Deep-link to a page with `newspaper.html?page=4`.
+Add or replace articles and the pages, front-page index and page numbers regenerate automatically. Keep bodies roughly 280–420 words so they fit a page (shorter pieces get larger type and a vintage filler notice; longer ones get denser type). Give published pieces a `url` — it renders a "First published in the Mossel Bay Advertiser" link on the page. Deep-link to a page with `newspaper.html?page=4`.
 
-> **Note:** the current articles are realistic placeholders written for the MVP, not published work.
+> The articles are Kirsti's real work: five pieces published in the Mossel Bay Advertiser (Nov 2025 – Jun 2026) plus two of her opinion columns.
 
 ## Stack
 
