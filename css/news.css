@@ -451,6 +451,13 @@ body.news-body::before{
 
 /* ---------- StPageFlip integration ---------- */
 
+/* fading exit of the outgoing left page while the book closes onto the cover */
+.page--vanish{
+  opacity:0 !important;
+  transition:opacity .5s ease .15s !important;
+}
+
+
 .stf__parent{ margin:0 auto; }
 .stf__wrapper{ z-index:4; }
 

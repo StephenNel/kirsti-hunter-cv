@@ -231,6 +231,21 @@
   pageFlip.loadFromHTML(document.querySelectorAll('#book .page'));
   window.__pf = pageFlip;
 
+  /* When the book closes back onto the front page, the outgoing left page
+     is the front face of the very sheet being folded — fade it out under
+     the turning sheet instead of leaving it flat until the animation ends
+     (the flip engine signals this via the hh-close-to-cover event). */
+  const firstLeftPage = document.querySelectorAll('#book .page')[1];
+  window.addEventListener('hh-close-to-cover', () => {
+    if (firstLeftPage && pageFlip.getCurrentPageIndex() === 1 &&
+        pageFlip.getRender().getOrientation() === 'landscape') {
+      firstLeftPage.classList.add('page--vanish');
+    }
+  });
+  const unvanish = () => firstLeftPage && firstLeftPage.classList.remove('page--vanish');
+  pageFlip.on('flip', unvanish);
+  pageFlip.on('changeState', (e) => { if (e.data === 'read') unvanish(); });
+
   /* ---------- controls ---------- */
   const indicator = document.getElementById('pageIndicator');
   const total = pageFlip.getPageCount();
